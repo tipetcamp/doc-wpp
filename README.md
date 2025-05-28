@@ -84,7 +84,7 @@ Execute o comando:
 docker run --name wpp -d -p 21465 --restart unless-stopped tipetcamp/wpplj101:1.0
 ```
 
-## ✅ 6º Passo: Criar a pasta do número de telefone
+## ✅ 6º Passo: Criar a pasta do número de telefone e alterar o SELECT da consulta de mensanges para a loja
 
 1. Acesse o terminal do container:
 
@@ -92,13 +92,33 @@ docker run --name wpp -d -p 21465 --restart unless-stopped tipetcamp/wpplj101:1.
 docker exec -it wpp /bin/bash
 ```
 
-2. Crie a pasta correspondente ao número do telefone da loja:
+2. Instalar o VIM para inspecionar arquivos
+
+```bash
+apt install -y vim
+```
+
+3. Crie a pasta correspondente ao número do telefone da loja:
 
 ```bash
 mkdir /tokens/celulardaloja
 ```
 
-3. Saia do container:
+4. Alterar o select no server.ts
+
+```bash
+vi server.ts
+```
+
+Procure o SELECT que realiza a consulta no banco de dados e altere o WHERE remetente in ('')
+
+Coloque o celular da loja na consulta.
+
+Para salvar a alteração
+
+:x! 
+
+6. Saia do container:
 
 ```bash
 exit
