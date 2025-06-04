@@ -81,7 +81,7 @@ This message shows that your installation appears to be working correctly.
 Execute o comando:
 
 ```bash
-docker run --name wpp -d -p 21465 --restart unless-stopped tipetcamp/wpplj101:1.0
+docker run --name wpp -d -p 21465 --restart unless-stopped tipetcamp/wpp:1.0
 ```
 
 ## ✅ 6º Passo: Criar a pasta do número de telefone e alterar o SELECT da consulta de mensanges para a loja
